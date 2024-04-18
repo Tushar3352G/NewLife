@@ -1467,7 +1467,7 @@ menu
 .mil-menu-list li a:hover {
   -webkit-transform: translateX(5px);
           transform: translateX(5px);
-  color: rgb(255, 255, 255);
+  color: var(--blackbg);
 }
 .mil-menu-list.mil-hori-list {
   display: -webkit-box;
