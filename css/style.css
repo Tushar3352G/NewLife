@@ -3,6 +3,10 @@
 
 :root{
   --maincolor:#FF9800;
+  --whitebg:#fefeff;
+  --blackbg:#000;
+  --lightcolor:#464646;
+  --sectiongray:rgb(242, 242, 242);
 }
 
 /* -------------------------------------------
@@ -327,6 +331,9 @@ blockquote {
   font-weight: 500;
   letter-spacing: 2px;
 }
+p.mil-up{
+  color:var(--lightcolor);
+}
 
 .mil-bold {
   font-weight: 500;
@@ -350,14 +357,14 @@ a {
 }
 
 .mil-light {
-  color: rgb(255, 255, 255) !important;
+  color: var(--blackbg) !important;
 }
 .mil-light a {
-  color: rgb(255, 255, 255) !important;
+  color: var(--blackbg) !important;
 }
 
 .mil-muted {
-  color: rgba(255, 255, 255, 0.9);
+  color:var(--blackbg);
 }
 
 .mil-dark {
@@ -365,7 +372,7 @@ a {
 }
 
 .mil-light-soft {
-  color: rgba(255, 255, 255, 0.4);
+  color: var(--lightcolor);
 }
 
 .mil-dark-soft {
@@ -407,7 +414,7 @@ a {
   top: 10px;
   width: 600px;
   height: 1px;
-  background-color: rgb(255, 255, 255);
+  background-color: var(--lightcolor);
   opacity: 0.2;
 }
 .mil-suptitle.mil-suptitle-right {
@@ -425,7 +432,7 @@ a {
   }
 }
 .mil-suptitle.mil-suptitle-dark:before {
-  background-color: rgb(0, 0, 0);
+  background-color: var(--b);
   opacity: 0.1;
 }
 @media screen and (max-width: 768px) {
@@ -482,12 +489,12 @@ link
   width: 40px;
   height: 40px;
   padding: 10px;
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color:var(--blackbg);
   -webkit-transition: 0.4s cubic-bezier(0, 0, 0.3642, 1);
   transition: 0.4s cubic-bezier(0, 0, 0.3642, 1);
 }
 .mil-link svg path {
-  fill: rgb(255, 255, 255);
+  fill: var(--whitebg);
 }
 .mil-link.mil-accent svg {
   background-color: rgba(255, 255, 255, 0.1);
@@ -776,6 +783,7 @@ backgrounds
 
 ------------------------------------------- */
 .mil-dark-bg {
+  background:var(--sectiongray);
   position: relative;
 }
 .mil-dark-bg:before {
@@ -785,8 +793,6 @@ backgrounds
   position: absolute;
   pointer-events: none;
   z-index: 2;
-  -webkit-backdrop-filter: invert(100%);
-          backdrop-filter: invert(100%);
 }
 .mil-dark-bg .mi-invert-fix {
   height: 100%;
@@ -799,7 +805,7 @@ backgrounds
 }
 
 .mil-soft-bg {
-  background-color: rgb(242, 242, 242);
+  background-color: var(--sectiongray);
 }
 
 /* -------------------------------------------
@@ -998,13 +1004,13 @@ preloader
   left: 0;
   width: 100%;
   height: 100vh;
-  background-color: rgb(0, 0, 0);
+  background-color:var(--whitebg);
 }
 .mil-preloader .mil-preloader-animation {
   opacity: 0;
   position: relative;
   height: 100vh;
-  color: rgb(255, 255, 255);
+  color:var(--blackbg);
 }
 .mil-preloader .mil-preloader-animation .mil-pos-abs {
   position: absolute;
@@ -1844,7 +1850,7 @@ circle text
   height: 140px;
 }
 .mil-circle-text .mil-ct-svg text {
-  fill: rgba(255, 255, 255, 0.4);
+  fill:var(--lightcolor);
   text-transform: uppercase;
   font-size: 12px;
   font-weight: 500;
@@ -1855,8 +1861,13 @@ circle text
   position: absolute;
 }
 .mil-circle-text:hover svg text {
-  fill: rgb(255, 255, 255);
+  fill:var(--lightcolor);
 }
+.mil-suptitle,
+.mil-text-sm{
+  color:var(--lightcolor);
+}
+
 @media screen and (max-width: 992px) {
   .mil-circle-text {
     display: none;
@@ -1948,7 +1959,7 @@ dodecahedron
   right: 100px;
 }
 .mil-position-1 .mil-pentagon div {
-  border-top: 0.1px solid rgb(255, 255, 255);
+  border-top: 0.1px solid  var(--lightcolor);
 }
 
 .mil-position-2 {
@@ -1956,7 +1967,7 @@ dodecahedron
   left: 15%;
 }
 .mil-position-2 .mil-pentagon div {
-  border-top: 1px solid rgb(255, 255, 255);
+  border-top: 1px solid var(--lightcolor);
 }
 .mil-position-2 .mil-dodecahedron {
   -webkit-animation-delay: 0.5s;
@@ -1973,7 +1984,7 @@ dodecahedron
   right: 35%;
 }
 .mil-position-3 .mil-pentagon div {
-  border-top: 1px solid rgb(255, 255, 255);
+  border-top: 1px solid var(--blackbg);
 }
 .mil-position-3 .mil-dodecahedron {
   -webkit-animation-delay: 1s;
@@ -2373,14 +2384,15 @@ services
 }
 
 .mil-services-grid {
-  border-top: solid 1px rgba(255, 255, 255, 0.1);
+  border-top: solid 0.1px rgba(0,0,0,0.2);
 }
 .mil-services-grid .mil-services-grid-item {
-  border-right: solid 1px rgba(255, 255, 255, 0.1);
+  border-right: solid 0.1px rgba(0,0,0,0.2);
 }
 .mil-services-grid .mil-services-grid-item:first-child {
-  border-left: solid 1px rgba(255, 255, 255, 0.1);
+  border-left: solid 0.1px rgba(0,0,0,0.2);
 }
+
 @media screen and (max-width: 992px) {
   .mil-services-grid {
     padding-bottom: 90px;
@@ -2988,7 +3000,7 @@ footer
   display: block;
   font-weight: 500;
   font-size: 28px;
-  color: rgba(255, 255, 255, 0.9);
+  color: var(--lightcolor);
   -webkit-transition: 0.4s cubic-bezier(0, 0, 0.3642, 1);
   transition: 0.4s cubic-bezier(0, 0, 0.3642, 1);
 }
@@ -3023,7 +3035,7 @@ footer
 .mil-subscribe-form input {
   height: 100%;
   width: 100%;
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color:var(--whitebg);
   color: rgb(0, 0, 0);
   font-size: 12px;
   font-weight: 500;
