@@ -2184,7 +2184,7 @@ about
   border-radius: 50%;
   position: relative;
 }
-.mil-about-quote .mil-avatar:after {
+/* .mil-about-quote .mil-avatar:after {
   content: ' " ';
   color: rgb(0, 0, 0);
   width: 30px;
@@ -2202,7 +2202,7 @@ about
       -ms-flex-pack: center;
           justify-content: center;
   font-size: 36px;
-}
+} */
 .mil-about-quote .mil-avatar img {
   border-radius: 50%;
   width: 100%;
