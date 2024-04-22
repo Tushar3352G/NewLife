@@ -993,7 +993,7 @@ preloader
 ------------------------------------------- */
 .mil-preloader {
   position: fixed;
-  z-index: 9;
+  z-index: 15;
   top: 0;
   left: 0;
   width: 100%;
@@ -1190,7 +1190,7 @@ frame
 @media screen and (max-width: 1200px) {
   .mil-frame {
     padding: 0;
-    z-index: 999;
+    z-index: 9;
     height: 90px;
   }
 }
@@ -2311,7 +2311,12 @@ services
   .mil-text-image {
     display: none;
   }
+
+  .mil-banner{
+    height:90vh;
+  }
 }
+
 
 .mil-service-card-sm {
   position: relative;
