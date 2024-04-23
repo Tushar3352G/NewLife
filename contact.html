@@ -19,7 +19,6 @@
     <link rel="stylesheet" href="css/style.css">
     <!-- page name -->
     <title>NewLife</title>
-
 </head>
 
 <body>
@@ -252,22 +251,23 @@
                 <section id="contact">
                     <div class="container mil-p-120-90">
                         <h3 class="mil-center mil-up mil-mb-120">Let's <span class="mil-thin">Talk</span></h3>
-                        <form class="row align-items-center">
+                        <p class="mil-up mil-mb-30 submit-text"></p>
+                        <form class="row align-items-center" id="newlife-form">
                             <div class="col-lg-6 mil-up">
-                                <input type="text" placeholder="What's your name">
+                                <input name="user_name" type="text" placeholder="What's your name">
                             </div>
                             <div class="col-lg-6 mil-up">
-                                <input type="email" placeholder="Your Email">
+                                <input name="user_email" type="email" placeholder="Your Email">
                             </div>
                             <div class="col-lg-12 mil-up">
-                                <textarea placeholder="Tell us about our project"></textarea>
+                                <textarea name="message" placeholder="Tell us about our project"></textarea>
                             </div>
                             <div class="col-lg-8">
                                 <p class="mil-up mil-mb-30"><span class="mil-accent">*</span> We promise not to disclose your personal information to third parties.</p>
                             </div>
                             <div class="col-lg-4">
                                 <div class="mil-adaptive-right mil-up mil-mb-30">
-                                    <button type="submit" class="mil-button mil-arrow-place">
+                                    <button type="submit" value="Send" class="mil-button mil-arrow-place">
                                         <span>Send message</span>
                                     </button>
                                 </div>
@@ -507,6 +507,50 @@
     <!-- ashley js -->
     <script src="js/main.js"></script>
 
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+    <script type="text/javascript">
+
+        (function() {
+            emailjs.init({
+              publicKey: "399NBdRkNQmXudBV9",
+            });
+        })();
+
+
+        let submitp = document.querySelector('.submit-text')
+        let subinputs = document.querySelectorAll('#newlife-form input, #newlife-form textarea')     
+
+        document.getElementById('newlife-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+    let formFilled = false;
+
+    subinputs.forEach(inputs => {
+        if (inputs.value !== '' && inputs.value !== ' ') {
+            formFilled = true;
+            console.log(formFilled)
+        }
+    });
+
+    if (formFilled) {
+        emailjs.sendForm('service_64qdtre', 'template_cl27mrs', this)
+            .then((res) => {
+                console.log('SUCCESS!', res);
+                submitp.textContent = 'Thank you for your submission!';
+                document.getElementById('newlife-form').reset();
+            })
+            .catch((error) => {
+                console.log('FAILED...', error);
+            });
+    } else {
+        submitp.textContent = 'Please fill the form';
+    }
+});
+
+
+
+    </script>
 </body>
 
 </html>
