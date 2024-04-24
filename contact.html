@@ -38,23 +38,6 @@
         </div>
         <!-- cursor end -->
 
-        <!-- preloader -->
-        <div class="mil-preloader">
-            <div class="mil-preloader-animation">
-                <div class="mil-pos-abs mil-animation-1">
-                    <p class="mil-h3 mil-muted mil-thin">Pioneering</p>
-                    <p class="mil-h3 mil-muted">Creative</p>
-                    <p class="mil-h3 mil-muted mil-thin">Excellence</p>
-                </div>
-                <div class="mil-pos-abs mil-animation-2">
-                    <div class="mil-reveal-frame">
-                        <p class="mil-reveal-box"></p>
-                        <p class="mil-h3 mil-muted mil-thin">NewLifeItSolutions.com</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- preloader end -->
 
         <!-- scrollbar progress -->
         <div class="mil-progress-track">
@@ -96,14 +79,10 @@
                                         </ul>
                                     </li>
                                     <li class="mil-has-children mil-active">
-                                        <a href="contact.html">Contact Us</a>
+                                        <a class="notanimation" href="contact.html">Contact Us</a>
                                     </li>
                                     <li class="mil-has-children">
-                                        <a href="#.">Services</a>
-                                        <ul>
-                                            <li><a href="services.html">Services List</a></li>
-                                            <li><a href="service.html">Single service</a></li>
-                                        </ul>
+                                        <a href="service.html">Services</a>
                                     </li>
                                     <li class="mil-has-children ">
                                         <a href="#.">Newsletter</a>
@@ -310,7 +289,7 @@
                                                         <a href="services.html">Services</a>
                                                     </li>
                                                     <li class="mil-up">
-                                                        <a href="contact.html">Contact</a>
+                                                        <a data-no-swup href="contact.html">Contact</a>
                                                     </li>
                                                     <li class="mil-up">
                                                         <a href="blog.html">Blog</a>
@@ -522,14 +501,14 @@
         let subinputs = document.querySelectorAll('#newlife-form input, #newlife-form textarea')     
 
         document.getElementById('newlife-form').addEventListener('submit', function(event) {
-            event.preventDefault();
+    event.preventDefault();
 
     let formFilled = false;
 
     subinputs.forEach(inputs => {
         if (inputs.value !== '' && inputs.value !== ' ') {
             formFilled = true;
-            console.log(formFilled)
+            console.log(inputs.value);
         }
     });
 
@@ -547,6 +526,8 @@
         submitp.textContent = 'Please fill the form';
     }
 });
+
+
 
 
 
