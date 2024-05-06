@@ -971,8 +971,10 @@ $(function () {
             autoplay: true,
             autoplay: {
                 delay: 0,
+                disableOnInteraction: false,
             },
             loop: true,
+            loopAdditionalSlides:4,
             freeMode: true,
             breakpoints: {
                 992: {
