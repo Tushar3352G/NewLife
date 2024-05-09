@@ -835,6 +835,11 @@ spaces
   margin-bottom: 60px;
 }
 
+.mil-ul-25 {
+  color:var(--blackbg);
+  margin-left: 25px;
+}
+
 .mil-mb-90 {
   margin-bottom: 90px;
 }
@@ -983,6 +988,9 @@ spaces
   .mil-btn-space {
     margin-right: 50px;
     margin-bottom: 30px;
+  }
+  .mil-ul-25 {
+    margin-left: 20px;
   }
 }
 
